@@ -1,0 +1,39 @@
+#drive-bash {
+	position: fixed;
+	z-index: 100000;
+	width: 300px;
+	height: 200px;
+	background-color: black;
+	color: #eee;
+}
+
+#drive-bash-dragbar {
+	display: none;
+	width: 300px;
+	text-align: center;
+	background-color: rgba(200,200,200, 0.5);
+	color: white;
+	cursor: move;
+}
+
+#drive-bash-close-btn {
+	width: 20px;
+	background-color: red;
+}
+
+#drive-bash:hover #drive-bash-dragbar {
+	display: block;
+	position: absolute;
+}
+
+#drive-bash-input {
+	display: inline-block;
+	border: 0;
+	background-color: rgba(0,0,0,0);
+	color: #eee;
+}
+
+#drive-bash-input:focus {
+	border: 0;
+	outline: none;
+}

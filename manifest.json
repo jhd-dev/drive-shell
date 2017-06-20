@@ -1,0 +1,51 @@
+{
+  "name": "Drive Shell",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "a shell for Google Drive",
+  "homepage_url": "https://extensionizr.com/",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "options_page": "src/options_custom/index.html",
+  "browser_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "browser action demo",
+    "default_popup": "src/browser_action/browser_action.html"
+  },
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "https://drive.google.com/*",
+    "https://www.googleapis.com/*",
+    "https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://drive.google.com/*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://drive.google.com/*"
+      ],
+      "js": [
+        "js/jquery/jquery.js",
+        "js/jquery/jquery-ui.js",
+        "js/gapi.js",
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
